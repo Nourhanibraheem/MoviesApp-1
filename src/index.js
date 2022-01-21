@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { composeWithDevTools } from "redux-devtools-extension";
-import rootReducer from "./store/reducers/rootReducer";
-import { createStore } from "redux";
+import store from './store/store';
+// import { composeWithDevTools } from "redux-devtools-extension";
+// import rootReducer from "./store/reducers/rootReducer";
+// import { createStore } from "redux";
 import { Provider } from 'react-redux'
-import favReducer from './store/reducers/favReducer';
+// import favReducer from './store/reducers/favReducer';
 
-const store = createStore(favReducer,rootReducer,composeWithDevTools());
+// const store = createStore(favReducer,rootReducer,composeWithDevTools());
 
 ReactDOM.render(
   <React.StrictMode>
