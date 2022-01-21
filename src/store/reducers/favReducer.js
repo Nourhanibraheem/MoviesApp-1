@@ -6,7 +6,7 @@ export default function favReducer(state = INITIAL_VALUE, action) {
         case 'GET_MOVIE_LIST':
             return {
                 ...state,
-                list: action.playload
+                list: action.payload
             }
         default:
             return state

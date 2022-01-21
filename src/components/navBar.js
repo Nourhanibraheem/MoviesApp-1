@@ -41,7 +41,7 @@ export default function NavBar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <button className="btn-danger" onClick={() => setContextLanguage("ar")}>
+                            <button className="lang btn-danger" onClick={() => setContextLanguage("ar")}>
                             {contextLanguage}
                             </button>
                         </li>

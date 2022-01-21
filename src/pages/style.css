@@ -50,5 +50,10 @@ body{
     color:#494747;
 }
 .log{
-    margin-left: 230mm;
+    margin-left: 220mm;
+}
+.lang{
+    border: none;
+    margin-top: 6px;
+    margin-left: 4px;
 }
