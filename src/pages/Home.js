@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,13 +7,14 @@ import './style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGratipay, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { getMovielist } from "../store/actions/fav";
+import { addTolist } from "../store/actions/favourite";
+import { removeFromlist } from "../store/actions/favourite";
 
 
 export default function Movies() {
     const fav = useSelector((state) => state.fav.list);
-    // const [movies, setMovies] = useState([]);
-
-    const favIds = useSelector((state) => state.favIds);
+ 
+    const favIds = useSelector((state) => state.root.favIds);
     const dispatch = useDispatch();
 
     let isFav = (id) => {
@@ -22,8 +23,8 @@ export default function Movies() {
 
     let toggleFav = (id) => {
         isFav(id)
-            ? dispatch({ type: "REMOVE", payload: id })
-            : dispatch({ type: "ADD", payload: id });
+            ? dispatch(removeFromlist(id))
+            : dispatch(addTolist(id));
     };
 
     useEffect(() => {

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LanguageContext } from "../context/languageContext";
+
 
 
 export default function NavBar() {
+    const{contextLanguage, setContextLanguage}  = useContext(LanguageContext);
+
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
             <div className="container-fluid">
@@ -36,9 +40,14 @@ export default function NavBar() {
                                 Favorites
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <button className="btn-danger" onClick={() => setContextLanguage("ar")}>
+                            {contextLanguage}
+                            </button>
+                        </li>
                         <li className="log nav-item ">
                             <Link className="active nav-link" to="/LoginForm">
-                                 Log In
+                                Log In
                             </Link>
                         </li>
                         <li className="nav-item">

@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faGratipay } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { removeFromlist } from "../store/actions/favourite";
+
 
 
 
@@ -18,7 +20,7 @@ function Favorites() {
 
     let removeFav = (id) => {
         setMoviesList(moviesList.filter((el) => el.id != id));
-        dispatch({ type: "REMOVE", payload: id });
+        dispatch(removeFromlist);
     };
 
     useEffect(() => {
