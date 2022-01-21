@@ -13,7 +13,7 @@ import { removeFromlist } from "../store/actions/favourite";
 
 export default function Movies() {
     const fav = useSelector((state) => state.fav.list);
- 
+    console.log(fav)
     const favIds = useSelector((state) => state.root.favIds);
     const dispatch = useDispatch();
 

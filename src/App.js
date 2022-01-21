@@ -10,15 +10,9 @@ import RegisterForm from './pages/RegisterForm';
 import NotFound from './components/notfound';
 import { LanguageContext } from './context/languageContext';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-
-
 
 function App() {
-  const fav = useSelector((state) => state.fav.list);
   const [contextLanguage, setContextLanguage] = useState("en")
-
-
   return (
     <>
       <LanguageContext.Provider value={{ contextLanguage, setContextLanguage }}>

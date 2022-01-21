@@ -13,14 +13,14 @@ import { removeFromlist } from "../store/actions/favourite";
 
 
 function Favorites() {
-    let favIds = useSelector((state) => state.favIds);
+    let favIds = useSelector((state) => state.root.favIds);
     const dispatch = useDispatch();
 
     const [moviesList, setMoviesList] = useState([]);
 
     let removeFav = (id) => {
         setMoviesList(moviesList.filter((el) => el.id != id));
-        dispatch(removeFromlist);
+        dispatch(removeFromlist());
     };
 
     useEffect(() => {
